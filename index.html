@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mines Game | Shrey Nagda</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="title">Mines Game</div>
+      <div class="config">
+        <div id="mines" class="configitem">
+          <div class="subtitle">Mines</div>
+          <div class="container">
+            <button class="btn" onclick="decrementmines()">-</button>
+            <div id="minesval" class="value">5</div>
+            <button class="btn" onclick="incrementmines()">+</button>
+          </div>
+        </div>
+        <div id="time" class="configitem">
+          <div class="subtitle">Time</div>
+          <div class="container">
+            <button class="btn" onclick="decrementtime()">-</button>
+            <div id="timeval" class="value">10</div>
+            <button class="btn" onclick="incrementtime()">+</button>
+          </div>
+        </div>
+      </div>
+      <button id="start-btn">Start</button>
+      <div style="text-align: center; margin-top: 20px">
+        Note: Score is calculated based on the number of mines and the time
+        limit. More the mines more the scores. Less the seconds more the score
+      </div>
+    </div>
+    <script>
+      var minesVal = 5;
+      var timeval = 10;
+      function decrementmines() {
+        if (minesVal > 2) {
+          minesVal--;
+          document.querySelector("#minesval").textContent = minesVal;
+        }
+      }
+      function incrementmines() {
+        if (minesVal < 10) {
+          minesVal++;
+          document.querySelector("#minesval").textContent = minesVal;
+        }
+      }
+      function decrementtime() {
+        if (timeval > 10) {
+          timeval -= 10;
+          document.querySelector("#timeval").textContent = timeval;
+        }
+      }
+      function incrementtime() {
+        if (timeval < 60) {
+          timeval += 10;
+          document.querySelector("#timeval").textContent = timeval;
+        }
+      }
+
+      document
+        .querySelector("#start-btn")
+        .addEventListener("click", function (ev) {
+          window.location.href = `game.html?mines=${minesVal}&time=${timeval}`;
+        });
+    </script>
+  </body>
+</html>
