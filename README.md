@@ -10,6 +10,6 @@ This is simple mines game where we hit the blocks without hitting the mines. The
 
 ## Concepts Learned
 - HTML grid lyaout
-- Javascript DOM manipulation
-- Conditional styling
+- Javascript Control Statements
 - Responsive Design
+- Scoring Algorithm Design 
